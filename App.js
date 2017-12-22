@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Platform } from 'react-native';
+import { StyleSheet, View, Platform, } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 
 import CreateScreen from './src/screens/CreateScreen';
@@ -11,9 +11,9 @@ import ProfileScreen from "./src/screens/ProfileScreen";
 export default class App extends React.Component {
   render() {
     const MainNavigation = TabNavigator({
+        create: { screen: CreateScreen },
         home: { screen: HomeScreen },
         explore: { screen: ExploreScreen },
-        create: { screen: CreateScreen },
         trips: { screen: TripsScreen },
         profile: { screen: ProfileScreen }
       }, {

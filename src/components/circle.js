@@ -1,13 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { Icon } from 'native-base';
-
+import { View, Text, Platform } from 'react-native';
 
 const Circle = ({ label, icon }) => {
     return (
       <View style={styles.circle}>
         {icon}
-        <Text style={{ color: 'white', fontSize: 10 }}>{label}</Text>
+        <Text style={{ color: 'white', fontSize: 10, fontFamily: Platform.OS === 'android' ? 'Brandon-med':null }}>{label}</Text>
       </View>
     );
 };
@@ -16,11 +14,11 @@ const styles = {
   circle:{
     justifyContent: 'center',
     alignItems: 'center',
-    height: 60,
-    width: 60,
+    height: Platform.OS === 'android' ? 50 : 60,
+    width: Platform.OS === 'android' ? 50 : 60,
     backgroundColor: 'rgb(48,49,46)',
     borderRadius: 100,
-    marginTop: 20
+    marginTop: 20,
   }
 };
 

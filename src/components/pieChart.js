@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View, Text, Platform, requireNativeComponent } from 'react-native';
 import { PieChart, ProgressCircle } from 'react-native-svg-charts';
-import { Circle, G, Line } from 'react-native-svg';
+
+import { Pie, Bar } from 'react-native-pathjs-charts';
 
 class PieCharts extends React.PureComponent {
   render() {
@@ -81,7 +82,7 @@ class PieCharts extends React.PureComponent {
 }
 
 const styles = {
-  pieTitle:{
+  pieTitle: {
     position: 'absolute',
     color: 'white',
     fontSize: 12

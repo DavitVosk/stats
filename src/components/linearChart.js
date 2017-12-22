@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from 'react-native';
+import { View, Platform } from 'react-native';
 import { LineChart, XAxis, YAxis } from 'react-native-svg-charts'
 import { LinearGradient, Stop } from 'react-native-svg'
 import * as shape from "d3-shape";
@@ -12,8 +12,8 @@ class AreaChart extends React.PureComponent {
     const dataY = [5000, 2500, 0];
 
     return (
-      <View style={{ flex: 1, marginHorizontal: 20,}}>
-        <View style={{ flexDirection: 'row', height: 150 }}>
+      <View style={{ flex: 1, marginHorizontal: 20, }}>
+        <View style={{ flexDirection: 'row', height: Platform.OS === 'android' ? 125 : 150}}>
           <LineChart
             style={{ flex: 1 }}
             dataPoints={data}
@@ -29,7 +29,7 @@ class AreaChart extends React.PureComponent {
           />
           <YAxis
             dataPoints={dataY}
-            contentInset={{ top: 50, bottom: 30 }}
+            contentInset={{ top: 30, bottom: 10, backgroundColor: 'red' }}
             labelStyle={{ color: 'white' }}
             formatLabel={value => {
               return dataY.map(num => {

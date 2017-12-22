@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, ImageBackground, Dimensions, Image, ScrollView, Platform } from 'react-native';
+import { View, ImageBackground, Dimensions, Image, ScrollView, Platform } from 'react-native';
 import {
   Container,
   Content,
@@ -9,6 +9,7 @@ import {
   Icon,
   Title,
   Right,
+  Text
 } from 'native-base';
 
 import Circle from '../../components/circle';
@@ -45,9 +46,11 @@ class StatisticScreen extends Component {
     );
 
     const options = (
-      <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', marginTop: Platform.OS === 'android' ? 5 : 10 }}>
+      <View style={styles.optionsContainer}>
         <Image source={require('../../../Design_Assets/statspressed.png')} />
-        <Image source={require('../../../Design_Assets/visualisationpressed.png')} />
+        <Image source={require('../../../Design_Assets/default/visualisation.png')}
+               style={{ borderWidth: 1, borderColor: 'gray', borderRadius: 5 }}
+        />
       </View>
     );
 
@@ -146,13 +149,22 @@ const styles = {
   title: {
     color: 'white',
     fontSize: 20,
+    fontFamily: 'GaspoSlab-Medium',
+    // backgroundColor:'red'
   },
   layer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     marginTop: Platform.OS === 'android' ? 10 : 30,
     marginHorizontal: 20
-  }
+  },
+  optionsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: Platform.OS === 'android' ? 5 : 10,
+    marginHorizontal: 40
+  },
 };
 
 export default StatisticScreen;
