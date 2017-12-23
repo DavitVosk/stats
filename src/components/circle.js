@@ -14,8 +14,8 @@ const styles = {
   circle:{
     justifyContent: 'center',
     alignItems: 'center',
-    height: Platform.OS === 'android' ? 50 : 60,
-    width: Platform.OS === 'android' ? 50 : 60,
+    height: Platform.OS === 'android' ? 60 : 60,
+    width: Platform.OS === 'android' ? 60 : 60,
     backgroundColor: 'rgb(48,49,46)',
     borderRadius: 100,
     marginTop: 20,

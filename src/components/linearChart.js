@@ -12,7 +12,7 @@ class AreaChart extends React.PureComponent {
     const dataY = [5000, 2500, 0];
 
     return (
-      <View style={{ flex: 1, marginHorizontal: 20, }}>
+      <View style={{ flex: 1, marginHorizontal: 20, marginBottom: 10 }}>
         <View style={{ flexDirection: 'row', height: Platform.OS === 'android' ? 125 : 150}}>
           <LineChart
             style={{ flex: 1 }}

@@ -17,7 +17,6 @@ const styles = {
     height: 40,
     width: 70,
     borderWidth: 1,
-    borderColor: 'gray',
     borderRadius: 5,
     alignItems: 'center',
     justifyContent: 'center'

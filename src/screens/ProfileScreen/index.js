@@ -5,7 +5,7 @@ class ProfileScreen  extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'Profile',
     tabBarIcon: ({ focused }) => (
-      <Image style={{ width: 25, height: 25, }}
+      <Image style={{ width: 15, height: 15, }}
              source={require('../../../Design_Assets/lower_menu/profile_active.png')}
       />
     ),

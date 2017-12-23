@@ -8,12 +8,14 @@ import ExploreScreen from "./src/screens/ExploreScreen";
 import TripsScreen from "./src/screens/TripsScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
 
+import { ProgressCircle } from 'react-native-svg-charts'
+
 export default class App extends React.Component {
   render() {
     const MainNavigation = TabNavigator({
-        create: { screen: CreateScreen },
         home: { screen: HomeScreen },
         explore: { screen: ExploreScreen },
+        create: { screen: CreateScreen },
         trips: { screen: TripsScreen },
         profile: { screen: ProfileScreen }
       }, {

@@ -66,7 +66,7 @@ class StatisticScreen extends Component {
     );
 
     const pieChart = (
-      <View style={styles.layer}>
+      <View style={[styles.layer,]}>
         <View>
           <Circle label='COMPARE' />
           <Circle label='SHARE'
@@ -74,16 +74,14 @@ class StatisticScreen extends Component {
           />
         </View>
 
-        <View style={{ flex: 1, alignItems: 'center' }}>
-          <PieChart />
-        </View>
+        <PieChart />
       </View>
     );
 
     const slider = (
       <View style={styles.layer}>
         <View>
-          <Rectangle text='EDIT' contentStyle={{ color: 'gray', }} />
+          <Rectangle text='EDIT' contentStyle={{ color: 'gray',  }} containerStyle={{borderColor: 'gray'}} />
           <Rectangle icon='add'
                      contentStyle={{ color: 'white' }}
                      containerStyle={{ backgroundColor: 'rgb(48,49,46)', marginTop: 10 }}
@@ -150,13 +148,13 @@ const styles = {
     color: 'white',
     fontSize: 20,
     fontFamily: 'GaspoSlab-Medium',
-    // backgroundColor:'red'
   },
   layer: {
-    // flex: 1,
+    flex: 1,
     flexDirection: 'row',
-    marginTop: Platform.OS === 'android' ? 10 : 30,
-    marginHorizontal: 20
+    // marginTop: Platform.OS === 'android' ? 10 : 30,
+    marginTop: 20,
+    marginHorizontal: 20,
   },
   optionsContainer: {
     flex: 1,
