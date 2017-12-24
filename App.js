@@ -13,11 +13,11 @@ import { ProgressCircle } from 'react-native-svg-charts'
 export default class App extends React.Component {
   render() {
     const MainNavigation = TabNavigator({
+        profile: { screen: ProfileScreen },
         home: { screen: HomeScreen },
         explore: { screen: ExploreScreen },
         create: { screen: CreateScreen },
         trips: { screen: TripsScreen },
-        profile: { screen: ProfileScreen }
       }, {
         tabBarVisible: true,
         tabBarPosition: 'bottom',
@@ -26,6 +26,7 @@ export default class App extends React.Component {
           activeTintColor: 'rgb(240,171, 120)',
           labelStyle: {
             fontSize: 10,
+            fontFamily: Platform.OS === 'android' ? 'Brandon-med' : null,
             color: 'rgb(165,164,161)'
           },
           style: {

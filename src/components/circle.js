@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, Platform } from 'react-native';
+import { View, Text, Platform, TouchableOpacity } from 'react-native';
 
-const Circle = ({ label, icon }) => {
+const Circle = ({ label, icon, style }) => {
     return (
-      <View style={styles.circle}>
-        {icon}
-        <Text style={{ color: 'white', fontSize: 10, fontFamily: Platform.OS === 'android' ? 'Brandon-med':null }}>{label}</Text>
-      </View>
+      <TouchableOpacity style={[styles.circle, style]}>
+        {icon && icon}
+        {label && <Text style={styles.text}>{label}</Text>}
+      </TouchableOpacity>
     );
 };
 
@@ -18,7 +18,11 @@ const styles = {
     width: Platform.OS === 'android' ? 60 : 60,
     backgroundColor: 'rgb(48,49,46)',
     borderRadius: 100,
-    marginTop: 20,
+  },
+  text: {
+    color: 'white',
+    fontSize: 10,
+    fontFamily: Platform.OS === 'android' ? 'Brandon-med':null
   }
 };
 

@@ -6,7 +6,8 @@ class ExploreScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'Explore',
     tabBarIcon: ({ focused }) => (
-      <Image style={{ width: 30, height: 15, }}
+      <Image style={{ width: 20, height: 15, }}
+             resizeMode='contain'
              source={require('../../../Design_Assets/lower_menu/explorewhite.png')}
       />
     ),

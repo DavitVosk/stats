@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import {
   StyleSheet,
   Image,
@@ -7,11 +6,14 @@ import {
   View
 } from 'react-native'
 
+import ProfImage from './profImage';
+
+
 const Card = ({ imageUrl, text, textBgColor }) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={imageUrl} style={styles.image} />
+        <ProfImage source={imageUrl}/>
       </View>
       <View style={[styles.textContainer, { backgroundColor: textBgColor }]}>
         <Text style={styles.text}>{text}</Text>
@@ -33,13 +35,6 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 5
-  },
-  image: {
-    height: 60,
-    width: 60,
-    borderWidth: 2,
-    borderRadius: 24,
-    borderColor: '#f38368'
   },
   textContainer: {
     height: 15,

@@ -3,7 +3,6 @@ import { View, ImageBackground, Dimensions, Image, ScrollView, Platform } from '
 import {
   Container,
   Content,
-  Header,
   Left,
   Body,
   Icon,
@@ -12,14 +11,14 @@ import {
   Text
 } from 'native-base';
 
+import Header from '../../components/common/header';
 import Circle from '../../components/circle';
 import LinearChart from '../../components/linearChart';
 import PieChart from '../../components/pieChart';
 import Rectangle from '../../components/rectangle';
 import ContactCard from '../../components/contactCard';
 
-export const SCREEN_WIDTH = Dimensions.get('window').width;
-export const SCREEN_HEIGHT = Dimensions.get('window').height;
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../components/utils/dimensions';
 
 class StatisticScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -34,15 +33,9 @@ class StatisticScreen extends Component {
   render() {
     const header = (
       <Header
-        style={styles.header}>
-        <Left style={{ flex: 1 }}>
-          <Icon name='md-menu' style={styles.icon} />
-        </Left>
-        <Body style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Title style={styles.title}>DISTANCE</Title>
-        </Body>
-        <Right style={{ flex: 1 }} />
-      </Header>
+        title='DISTANCE'
+        leftIcon='menu'
+      />
     );
 
     const options = (
@@ -57,8 +50,8 @@ class StatisticScreen extends Component {
     const linearChart = (
       <View style={styles.layer}>
         <View>
-          <Circle label='MILES' />
-          <Circle label='MONTH' />
+          <Circle style={{ marginTop: 10 }} label='MILES' />
+          <Circle style={{ marginTop: 10 }} label='MONTH' />
         </View>
 
         <LinearChart />
@@ -68,8 +61,9 @@ class StatisticScreen extends Component {
     const pieChart = (
       <View style={[styles.layer,]}>
         <View>
-          <Circle label='COMPARE' />
+          <Circle label='COMPARE' style={{ marginTop: 10 }} />
           <Circle label='SHARE'
+                  style={{ marginTop: 10 }}
                   icon={<Icon name='md-share' style={{ color: 'white', fontSize: 17 }} />}
           />
         </View>
@@ -81,7 +75,7 @@ class StatisticScreen extends Component {
     const slider = (
       <View style={styles.layer}>
         <View>
-          <Rectangle text='EDIT' contentStyle={{ color: 'gray',  }} containerStyle={{borderColor: 'gray'}} />
+          <Rectangle text='EDIT' contentStyle={{ color: 'gray', }} containerStyle={{ borderColor: 'gray' }} />
           <Rectangle icon='add'
                      contentStyle={{ color: 'white' }}
                      containerStyle={{ backgroundColor: 'rgb(48,49,46)', marginTop: 10 }}
